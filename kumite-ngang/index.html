@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>KUMITE 16:9</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="board">
+        <input id="titleInput" value="KUMITE" />
+
+        <div class="info-row">
+            <div class="team-info">
+
+                <input class="name-box" id="nameAK">
+                
+                <div class="fault-row">
+                    <!-- Lỗi AK -->
+                    <button class="fault-btn no-click" disabled>PENALTY</button>
+                    <button class="fault-btn" data-side="AK">C1</button>
+                    <button class="fault-btn" data-side="AK">C2</button>
+                    <button class="fault-btn" data-side="AK">C3</button>
+                    <button class="fault-btn" data-side="AK">HC</button>
+                    <button class="fault-btn diff-font" data-side="AK">H</button>
+                </div>
+            </div>
+
+            <!-- AK -->
+            <div class="score-col">
+                <div class="score-box red" id="scoreAK">
+                    <span class="score-value">0</span>
+                    <div class="corner-s" id="cornerS-AK">S</div>
+                </div>
+                <div class="btn-col">
+                    <button onclick="toggleS('AK')">S</button>
+                    <button onclick="updateScore('AK',1)">+1</button>
+                    <button onclick="updateScore('AK',2)">+2</button>
+                    <button onclick="updateScore('AK',3)">+3</button>
+                    <button onclick="updateScore('AK',-1)">-</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="info-row">
+            <div class="team-info">
+
+                <input class="name-box blue" id="nameAO">
+                
+                <div class="fault-row">
+                    <!-- Lỗi AO -->
+                    <button class="fault-btn no-click" disabled>PENALTY</button>
+                    <button class="fault-btn" data-side="AO">C1</button>
+                    <button class="fault-btn" data-side="AO">C2</button>
+                    <button class="fault-btn" data-side="AO">C3</button>
+                    <button class="fault-btn" data-side="AO">HC</button>
+                    <button class="fault-btn diff-font" data-side="AO">H</button>
+                </div>
+            </div>
+
+            <!-- AO -->
+            <div class="score-col">
+                <div class="score-box" id="scoreAO">
+                    <span class="score-value">0</span>
+                    <div class="corner-s" id="cornerS-AO">S</div>
+                </div>
+                <div class="btn-col">
+                    <button onclick="toggleS('AO')">S</button>
+                    <button onclick="updateScore('AO',1)">+1</button>
+                    <button onclick="updateScore('AO',2)">+2</button>
+                    <button onclick="updateScore('AO',3)">+3</button>
+                    <button onclick="updateScore('AO',-1)">-</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="timer-wrapper">
+        <!-- Logo bên trái -->
+        <div class="left-block">
+          <img src="images/logo cty mầu.png" alt="Logo" class="logo" />
+
+        </div>
+
+        <!-- Đồng hồ ở giữa -->
+        <div class="center-block">
+          <span id="countdown">1:00</span>
+          <span id="tickDisplay">00</span>
+        </div>
+
+        <!-- Tatami bên phải -->
+        <div class="right-block">
+          <span class="tatami-text">TATAMI</span>
+          <input type="text" id="tatamiInput" value="1"/>
+        </div>
+      </div>
+
+
+      <div class="timer-btns">
+        <button onclick="startTimer()">START</button>
+        <button onclick="stopTimer()">STOP</button>
+
+<div class="time-select-wrapper">
+          <input
+            type="text"
+            id="timeInput"
+            value="60"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            maxlength="3"
+          />
+          <button
+            type="button"
+            id="timeDropdownBtn"
+            class="time-dropdown-btn"
+            aria-label="Chọn thời gian có sẵn"
+          >
+            ▼
+          </button>
+          <ul id="timeDropdownList" class="time-dropdown-list" hidden>
+            <li data-value="45">45</li>
+            <li data-value="60">60</li>
+            <li data-value="90">90</li>
+            <li data-value="120">120</li>
+            <li data-value="150">150</li>
+            <li data-value="180">180</li>
+          </ul>
+        </div>
+
+
+         
+        <button onclick="resetTime()">RESET TIME</button>
+        <button onclick="resetAll()">RESET ALL</button>
+      </div>
+
+  </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
