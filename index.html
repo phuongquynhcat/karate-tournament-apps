@@ -2,38 +2,56 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Karate Tournament Apps</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #1a1a1a;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        gap: 20px;
-        margin: 0;
-      }
-      a {
-        color: #4caf50;
-        font-size: 22px;
-        text-decoration: none;
-        border: 2px solid #4caf50;
-        padding: 12px 28px;
-        border-radius: 8px;
-      }
-      a:hover {
-        background: #4caf50;
-        color: #1a1a1a;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thăng Long Sport</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Karate Tournament Apps</h1>
-    <a href="kata/">KATA Scoreboard</a>
-    <a href="kumite-doc/">KUMITE Scoreboard (vertical)</a>
-    <a href="kumite-ngang/">KUMITE Scoreboard (horizontal)</a>
+    <div class="statusbar">
+      <div class="brand">
+        <img
+          class="brand-logo"
+          src="images/logo cty mầu.png"
+          alt="Thăng Long"
+        />
+        <div class="brand-text">Thăng Long Sport</div>
+      </div>
+      <div class="readouts">
+        <div class="readout-item">
+          <span class="readout-label">Trạng thái</span>
+          <span class="readout-value online" id="online-count">— hệ thống</span>
+        </div>
+        <div class="readout-item">
+          <span class="readout-label">Giờ hệ thống</span>
+          <span class="readout-value" id="clock">--:--:--</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search-wrap">
+        <svg
+          class="search-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          id="search"
+          placeholder="Tìm hệ thống theo tên hoặc mô tả..."
+        />
+      </div>
+      <div class="chips" id="chips"></div>
+      <button class="hidden-toggle" id="hiddenToggle" type="button"></button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
